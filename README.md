@@ -4,6 +4,7 @@
 
 ![Image](/IMAGES/miniocxo-front.png)
 ![Image](/IMAGES/miniocxo-rear.png)
+![Image](/IMAGES/miniocxo-pcb.png)
 
 ## Areas of potential use:
 * Stable reference frequency for radio communications: transmitters, receivers
