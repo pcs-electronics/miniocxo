@@ -5,7 +5,7 @@
 ![Image](/IMAGES/miniocxo-front.png)
 ![Image](/IMAGES/miniocxo-rear.png)
 
-##Areas of potential use:
+## Areas of potential use:
 – Stable reference frequency for radio communications: transmitters, receivers
 – Amateur radio: QO-100, VHF, SHF, FT8
 – Laboratory-grade, stable RF signal source
@@ -13,9 +13,9 @@
 – Analog and digital radio and TV broadcasting
 – Laboratory work, with three independent channels precisely in phase and thermally stabilized
 
-##Setup:
+## Setup:
 
-##Arduino environment
+## Arduino environment
 
 Install the board as described here: https://github.com/DeqingSun/ch55xduino
 
@@ -26,7 +26,7 @@ Install the board as described here: https://github.com/DeqingSun/ch55xduino
 >Tools - Upload method - USB
 >Tools - Clock source - 24 MHz internal
 
-##Updating the firmware:
+## Updating the firmware:
 
 Install and run the WCHISPTool from http://www.wch-ic.com/downloads/WCHISPTool_Setup_exe.html
 Tab: CH55x Series
