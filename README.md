@@ -30,17 +30,26 @@ Install the board as described here: https://github.com/DeqingSun/ch55xduino
 ## Updating the firmware:
 
 Install and run the WCHISPTool from http://www.wch-ic.com/downloads/WCHISPTool_Setup_exe.html
-Tab: CH55x Series
-Chip model: CH552, download type: USB
-User file: select the HEX file with a firmware.
+
+>Tab: CH55x Series
+>Chip model: CH552, download type: USB
+>User file: select the HEX file with a firmware.
+
 Connect the PROG jumper, cycle the power (not the USB port!), remove the PROG jumper
+
 Check the Device Manager: under "Interface" branch, there should be a "USB module" device.
+
 If there is an "Unknown device", go to the WCHISPTool folder and install the driver.
+
 In the WCHISPTool, click Search and make sure the "MCU model: CH552" appeared in the list.
+
 Click Download
+
 Cycle the power
+
 Now the Device manager will list a new "USB Serial Port" under "Ports (COM & LPT".
 
 Alternatively, instead of WCHISPTool, use vnproch55x :
+
 vnproch55x firmware.hex -r2
 
