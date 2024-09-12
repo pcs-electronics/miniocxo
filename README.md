@@ -6,14 +6,12 @@
 ![Image](/IMAGES/miniocxo-rear.png)
 
 ## Areas of potential use:
-– Stable reference frequency for radio communications: transmitters, receivers
-– Amateur radio: QO-100, VHF, SHF, FT8
-– Laboratory-grade, stable RF signal source
-– High end audio for synchronizing Hi-Fi ADCs and DACs
-– Analog and digital radio and TV broadcasting
-– Laboratory work, with three independent channels precisely in phase and thermally stabilized
-
-## Setup:
+* Stable reference frequency for radio communications: transmitters, receivers
+* Amateur radio: QO-100, VHF, SHF, FT8
+* Laboratory-grade, stable RF signal source
+* High end audio for synchronizing Hi-Fi ADCs and DACs
+* Analog and digital radio and TV broadcasting
+* Laboratory work, with three independent channels precisely in phase and thermally stabilized
 
 ## Arduino environment
 
@@ -22,8 +20,11 @@ Install the board as described here: https://github.com/DeqingSun/ch55xduino
 ( See also: https://sourceforge.net/p/sdcc/bugs/3569/ )
 
 >Tools - Board - CH5xx boards - CH552
+
 >Tools - USB settings - Default CDC
+
 >Tools - Upload method - USB
+
 >Tools - Clock source - 24 MHz internal
 
 ## Updating the firmware:
