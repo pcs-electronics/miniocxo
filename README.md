@@ -2,6 +2,7 @@
 
 [PCS Electronics shop](https://www.pcs-electronics.com/shop/rigexpert-products/other-reu-rigexpert-products/ocxo-3-channel-signal-generator-330khz-to-330mhz-2/)
 
+![Image](/IMAGES/miniocxo-example.png)
 ![Image](/IMAGES/miniocxo-front.png)
 ![Image](/IMAGES/miniocxo-rear.png)
 ![Image](/IMAGES/miniocxo-pcb.png)
