@@ -1,6 +1,6 @@
 # Mini OCXO (Oven Controlled Crystal Oscillator) generator with independently programmable 3x outputs, 330 kHz to 330 MHz (1 Hz step), plus a direct 10 MHz output
 
-## [>> Check the PCS Electronics shop! <<](https://www.pcs-electronics.com/shop/rigexpert-products/other-reu-rigexpert-products/ocxo-3-channel-signal-generator-330khz-to-330mhz-2/)
+## [>> Assembled units: check the PCS Electronics shop! <<](https://www.pcs-electronics.com/shop/rigexpert-products/other-reu-rigexpert-products/ocxo-3-channel-signal-generator-330khz-to-330mhz-2/)
 
 ![Image](/IMAGES/miniocxo-example.png)
 ![Image](/IMAGES/miniocxo-qo100.png)
