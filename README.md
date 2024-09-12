@@ -14,7 +14,18 @@
 * Analog and digital radio and TV broadcasting
 * Laboratory work, with three independent channels precisely in phase and thermally stabilized
 
-## Arduino environment
+## Default frequencies are 40 MHz for output 1, 25 MHz for output 2, 24 MHz for output 3.
+
+To change output frequencies:
+
+* Connect the OCXO to your computer by using a standard “type C” USB cable;
+* Run a serial terminal software, such as PuTTY or HyperTerminal, and open a virtual serial port (baudrate and other settings do not matter);
+* Type “?” (without quotes) and press Enter for a help;
+* Enter “fq 1 30000000” to set the frequency of output 1 to the value of 30 MHz;
+* Change other output’s frequencies, if needed, and then enter “load” to update the outputs;
+* The frequency settings will be stored in a non-volatile memory.
+
+## Modify/compile the code yourself: set up the Arduino environment
 
 Install the board as described here: https://github.com/DeqingSun/ch55xduino
 
