@@ -1,8 +1,9 @@
 # Mini OCXO generator with independently programmable 3x outputs, 330 kHz to 330 MHz, plus a direct 10 MHz output
 
-## [Check the PCS Electronics shop!](https://www.pcs-electronics.com/shop/rigexpert-products/other-reu-rigexpert-products/ocxo-3-channel-signal-generator-330khz-to-330mhz-2/)
+## [>> Check the PCS Electronics shop! <<](https://www.pcs-electronics.com/shop/rigexpert-products/other-reu-rigexpert-products/ocxo-3-channel-signal-generator-330khz-to-330mhz-2/)
 
 ![Image](/IMAGES/miniocxo-example.png)
+![Image](/IMAGES/miniocxo-qo100.png)
 ![Image](/IMAGES/miniocxo-front.png)
 ![Image](/IMAGES/miniocxo-rear.png)
 ![Image](/IMAGES/miniocxo-pcb.png)
@@ -26,7 +27,9 @@ To change output frequencies:
 * Change other output’s frequencies, if needed, and then enter “load” to update the outputs;
 * The frequency settings will be stored in a non-volatile memory.
 
-There are two user profiles; use a button to switch between the profiles.
+There are two user profiles; use the "Set" button to switch between the profiles.
+
+Fine-tune the frequency (plus-minus about 1ppm) with a "-+" trimmer.
 
 ## Modify/compile the code yourself: set up the Arduino environment
 
