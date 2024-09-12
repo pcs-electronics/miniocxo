@@ -20,8 +20,11 @@ Install the board as described here: https://github.com/DeqingSun/ch55xduino
 ( See also: https://sourceforge.net/p/sdcc/bugs/3569/ )
 
 >Tools - Board - CH5xx boards - CH552 
+>
 >Tools - USB settings - Default CDC 
+>
 >Tools - Upload method - USB 
+>
 >Tools - Clock source - 24 MHz internal 
 
 ## Updating the firmware:
@@ -29,7 +32,9 @@ Install the board as described here: https://github.com/DeqingSun/ch55xduino
 Install and run the WCHISPTool from http://www.wch-ic.com/downloads/WCHISPTool_Setup_exe.html
 
 >Tab: CH55x Series 
+>
 >Chip model: CH552, download type: USB 
+>
 >User file: select the HEX file with a firmware. 
 
 Connect the PROG jumper, cycle the power (not the USB port!), remove the PROG jumper
