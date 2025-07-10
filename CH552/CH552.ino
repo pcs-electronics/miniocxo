@@ -3,6 +3,7 @@
 
 // Arduino environment
 // Install the board as described here: https://github.com/DeqingSun/ch55xduino
+// Please use version 0.0.16 !!!
 
 // https://sourceforge.net/p/sdcc/bugs/3569/
 
@@ -49,6 +50,38 @@
 
 #define I2C_ADDR 0x6A
 
+// EEPROM write
+
+#define NEW_EEPROM_WRITE
+
+#ifdef NEW_EEPROM_WRITE
+
+#undef eeprom_write_byte
+
+void eeprom_write_byte(__data uint8_t addr, __xdata uint8_t val) {
+
+  delay(1); // Delay is needed to prevent EEPROM corruption
+
+  SAFE_MOD = 0x55;
+  SAFE_MOD = 0xAA;        // Enter Safe mode
+  GLOBAL_CFG |= bDATA_WE; // Enable DataFlash write
+  SAFE_MOD = 0;           // Exit Safe mode
+  ROM_ADDR_H = DATA_FLASH_ADDR >> 8;
+  ROM_ADDR_L = addr << 1;
+  ROM_DATA_L = val;
+  if (ROM_STATUS & bROM_ADDR_OK) { // Valid access Address
+    ROM_CTRL = ROM_CMD_WRITE;      // Write
+  }
+  SAFE_MOD = 0x55;
+  SAFE_MOD = 0xAA;         // Enter Safe mode
+  GLOBAL_CFG &= ~bDATA_WE; // Disable DataFlash write
+  SAFE_MOD = 0;            // Exit Safe mode
+
+
+}
+#endif // NEW_EEPROM_WRITE
+
+
 
 // Globals
 
@@ -56,8 +89,13 @@
 #define F_OCXO_HZ_MIN 1000000
 #define F_OCXO_HZ_MAX 200000000
 
-#define F_VCO_HZ_MIN 2600000000
-#define F_VCO_HZ_MAX 2900000000
+//#define F_VCO_HZ_MIN 2600000000
+//#define F_VCO_HZ_MAX 2900000000
+
+// Default is 2700000 (mult=270)
+
+#define F_VCO_HZ_MIN 2500000000
+#define F_VCO_HZ_MAX 3000000000
 
 #define NPROFILES 2
 uint8_t current_profile;
@@ -71,9 +109,21 @@ __xdata uint32_t tmp1_uint32;
 
 const uint8_t prog_array[] = { 
 // 0x00
-0x61, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0x01, 0xC0, 0x00, 0xB6, 0xB4, 0x92, 0x40, 0x2D, 0x81, 0x82, 0x00, 0x03, 0x84, 
-0x10, // 0x17 Feedback divider integer
+0x61, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0x01, 0xC0, 0x00, 0xB6, 0xB4, 0x92, 0x40, 0x2D, 0x81, 0x82, 0x00, 0x03, 0x84,
+
+//// 0x10E = 270d = 2.7 GHz of VCO at 10 MHz ref
+0x10, // 0x17 Feedback divider integer 
 0xE0, // 0x18 Feedback divider integer
+
+
+// 0x122 = 270d = 2.9 GHz of VCO at 10 MHz ref
+//0x12, // 0x17 Feedback divider integer 
+//0x20, // 0x18 Feedback divider integer
+
+//// 0x12C = 300d = 3.00 GHz of VCO at 10 MHz ref
+//0x12, // 0x17 Feedback divider integer 
+//0xC0, // 0x18 Feedback divider integer
+
 0x00, // 0x19 Feedback divider fraction
 0x00, // 0x1A Feedback divider fraction
 0x00, // 0x1B Feedback divider fraction
@@ -150,6 +200,7 @@ void init_synth()
 
 }
 
+/*
 void scan_i2c()
 {
   uint8_t ack_bit;
@@ -173,6 +224,7 @@ void scan_i2c()
   USBSerial_println("Done.");
   USBSerial_flush();
 }
+*/
 
 //#define LOAD_DEBUG
 
@@ -454,7 +506,7 @@ void print_data()
         "dump - dump DataFlash\n"
         "erase - erase DataFlash\n"
         "poke <addr_hex> <data_hex> - poke DataFlash\n"
-        "scan - scan I2C bus\n"
+        // "scan - scan I2C bus\n"
         "fact - reset to factory defaults\n"    
     );
 }
@@ -660,11 +712,11 @@ void cmd_interpret()
     print_data();      
     print_saved_vars();    
   }
-  else 
-  if ( (char_cmd_len >= 4) && (!strncmp(char_cmd, "scan", 4)))
-  {
-    scan_i2c();
-  }
+  // else 
+  // if ( (char_cmd_len >= 4) && (!strncmp(char_cmd, "scan", 4)))
+  // {
+  //   scan_i2c();
+  // }
   else
   if ( (char_cmd_len >= 4) && (!strncmp(char_cmd, "dump", 4)))
   {
