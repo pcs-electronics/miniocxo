@@ -34,6 +34,7 @@ Fine-tune the frequency (plus-minus about 1ppm) with a "-+" trimmer.
 ## Modify/compile the code yourself: set up the Arduino environment
 
 Install the board as described here: https://github.com/DeqingSun/ch55xduino
+Please use version 0.0.16 !!!
 
 ( See also: https://sourceforge.net/p/sdcc/bugs/3569/ )
 
