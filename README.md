@@ -57,7 +57,7 @@ Install and run the WCHISPTool from http://www.wch-ic.com/downloads/WCHISPTool_S
 >
 >User file: select the HEX file with a firmware. 
 
-Connect (short circuit) the PROG jumper on the board, cycle the power (not the USB port!), remove the PROG jumper
+Connect (short circuit) the PROG jumper on the board, cycle the power (do not disconnect the USB port!), then remove the PROG jumper
 
 Check the Device Manager: under "Interface" branch, there should be a "USB module" or "WinChipHead" device.
 
